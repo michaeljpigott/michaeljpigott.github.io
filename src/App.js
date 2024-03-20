@@ -1,23 +1,37 @@
+import Navbar from "./components/navbar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from "./pages";
+import About from "./pages/about";
+import Blogs from "./pages/blogs";
+import SignUp from "./pages/signup";
+import Contact from "./pages/contact";
 import './App.css';
 import Header from './header';
 
 function App() {
   return (
     <div class="container-lg">
-
-
-    <div className="App">
-      <Header />
-      <div class="alert alert-success" role="alert">
-        <p>This is the body of the website</p>
-        </div>
-        <a href="https://www.google.com.au">
-        <button type="button" class="btn btn-primary">Click me</button>
-        </a>
-
-
-    </div>
-    </div>
+    <Router>
+     <Navbar />
+     <Routes>
+      <Route exact path="/" element={<Home />} />
+      <Route exact path="/about" element={<About />} />
+      <Route
+        path="/contact"
+        element={<Contact />}
+        />
+      <Route path="/blogs" element={<Blogs />} />
+      <Route
+        path="/sign-up"
+        element={<SignUp />}
+      />
+     </Routes>
+    </Router>
+  </div>
 
   );
 }
