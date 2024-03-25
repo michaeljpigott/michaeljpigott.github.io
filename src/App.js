@@ -1,4 +1,4 @@
-import Navbar from "./components/navbar";
+import Navigation from "./components/navbar";
 import {
   BrowserRouter as Router,
   Routes,
@@ -24,7 +24,7 @@ function App() {
 <HelmetProvider>
     <Router>
 
-     <Navbar />
+     <Navigation />
      <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/about" element={<About />} />
