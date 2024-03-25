@@ -22,9 +22,10 @@ function App() {
 
 
 <HelmetProvider>
+<Navigation />
     <Router>
 
-     <Navigation />
+
      <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/about" element={<About />} />
@@ -38,6 +39,7 @@ function App() {
         element={<SignUp />}
       />
      </Routes>
+
     </Router>
     </HelmetProvider>
 
