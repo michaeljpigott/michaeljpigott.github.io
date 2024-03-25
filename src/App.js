@@ -10,12 +10,20 @@ import Blogs from "./pages/blogs";
 import SignUp from "./pages/signup";
 import Contact from "./pages/contact";
 import './App.css';
-import Header from './header';
+import { clarity } from "react-microsoft-clarity";
+import { HelmetProvider } from "react-helmet-async";
+
+const clarityKey = process.env.REACT_APP_CLARITY;
+
+clarity.init(clarityKey);
 
 function App() {
   return (
-    <div class="container-lg">
+
+
+<HelmetProvider>
     <Router>
+
      <Navbar />
      <Routes>
       <Route exact path="/" element={<Home />} />
@@ -31,7 +39,8 @@ function App() {
       />
      </Routes>
     </Router>
-  </div>
+    </HelmetProvider>
+
 
   );
 }
