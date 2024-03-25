@@ -22,8 +22,9 @@ function App() {
 
 
 <HelmetProvider>
-<Navigation />
+
     <Router>
+    <Navigation />
 
 
      <Routes>
