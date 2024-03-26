@@ -12,6 +12,7 @@ import Contact from "./pages/contact";
 import './App.css';
 import { clarity } from "react-microsoft-clarity";
 import { HelmetProvider } from "react-helmet-async";
+import PageNotFound from "./pages/404Page";
 
 const clarityKey = process.env.REACT_APP_CLARITY;
 
@@ -38,6 +39,8 @@ function App() {
       <Route
         path="/sign-up"
         element={<SignUp />}
+      />
+      <Route path="*" element={<PageNotFound />}
       />
      </Routes>
 
