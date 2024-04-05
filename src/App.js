@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+
 } from "react-router-dom";
 import Home from "./pages";
 import About from "./pages/about";
@@ -13,14 +14,21 @@ import './App.css';
 import { clarity } from "react-microsoft-clarity";
 import { HelmetProvider } from "react-helmet-async";
 import PageNotFound from "./pages/404Page";
+import ReactGA from 'react-ga4';
+import { useEffect } from "react";
+
+
+const TRACKING_ID = "G-H3205SN9L7";
 
 const clarityKey = process.env.REACT_APP_CLARITY;
 
 clarity.init(clarityKey);
 
 function App() {
+ useEffect(() => {
+  ReactGA.initialize(TRACKING_ID)
+ })
   return (
-
 
 <HelmetProvider>
 
@@ -40,7 +48,7 @@ function App() {
         path="/sign-up"
         element={<SignUp />}
       />
-      <Route path="/*" element={<PageNotFound />}
+      <Route path="*" element={<PageNotFound />}
       />
      </Routes>
 
