@@ -10,7 +10,7 @@ const Blogs = () => {
   <Helmet>
         <title>Blogs</title>
         <meta name="A page of blog posts." />
-      </Helmet><h1>You can write your blogs!</h1>;
+      </Helmet><h1>You can write your blogs!</h1>
   </div>
   );
 };
